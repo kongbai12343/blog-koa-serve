@@ -31,6 +31,11 @@ ArticleModel.init(
       allowNull: false,
       comment: "文章关联的分类ID",
     },
+    article_tag_ids: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      comment: "文章关联的标签IDs",
+    },
     status: {
       type: DataTypes.INTEGER(1),
       allowNull: true,
