@@ -6,7 +6,7 @@ const categoryRouter = new Router({ prefix: "/category" });
 
 categoryRouter.get("/", verifyAuth, CategoryController.getCategorList);
 
-categoryRouter.get("/:name", verifyAuth, CategoryController.findCategory);
+categoryRouter.get("/:name", verifyAuth, CategoryController.findCategoryByName);
 
 categoryRouter.post("/add", verifyAuth, CategoryController.addCategory);
 

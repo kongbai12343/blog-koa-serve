@@ -24,10 +24,10 @@ class TagController {
     }
   }
 
-  static async findTag(ctx, next) {
+  static async findTagByName(ctx, next) {
     const { name } = ctx.params;
     try {
-      const tag = await TagService.findTag(name);
+      const tag = await TagService.findTagByName(name);
       ctx.body = {
         code: 200,
         message: "success",

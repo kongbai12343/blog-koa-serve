@@ -6,7 +6,7 @@ const tagRouter = new Router({ prefix: "/tag" });
 
 tagRouter.get("/", verifyAuth, TagController.getTagList);
 
-tagRouter.get("/:name", verifyAuth, TagController.findTag);
+tagRouter.get("/:name", verifyAuth, TagController.findTagByName);
 
 tagRouter.post("/add", verifyAuth, TagController.addTag);
 

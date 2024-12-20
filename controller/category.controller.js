@@ -24,10 +24,10 @@ class CategoryController {
     }
   }
 
-  static async findCategory(ctx, next) {
+  static async findCategoryByName(ctx, next) {
     const { name } = ctx.params;
     try {
-      const category = await CategoryService.findCategory(name);
+      const category = await CategoryService.findCategoryByName(name);
       ctx.body = {
         code: 200,
         message: "success",

@@ -4,11 +4,20 @@ class CategoryDao {
     await CategoryModel.create(category);
   }
 
-  static async findCategory(name) {
+  static async findCategoryByName(name) {
     return await CategoryModel.findOne({
       attributes: ["id", "name", "state"],
       where: {
         name,
+      },
+    });
+  }
+
+  static async findCategoryById(id) {
+    return await CategoryModel.findOne({
+      attributes: ["id", "name", "state"],
+      where: {
+        id,
       },
     });
   }

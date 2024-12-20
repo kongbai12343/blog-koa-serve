@@ -10,8 +10,8 @@ class TagService {
     await TagDao.addTag(tag);
   }
 
-  static async findTag(name) {
-    return await TagDao.findTag(name);
+  static async findTagByName(name) {
+    return await TagDao.findTagByName(name);
   }
 
   static async getTagList(queryObj) {
@@ -19,10 +19,18 @@ class TagService {
   }
 
   static async updateTag(tag) {
+    const tagInfo = await TagDao.findTagById(tag.id);
+    if (!tagInfo) {
+      throw new Error("标签不存在");
+    }
     await TagDao.updateTag(tag);
   }
 
   static async deleteTag(id) {
+    const tagInfo = await TagDao.findTagById(id);
+    if (!tagInfo) {
+      throw new Error("标签不存在");
+    }
     await TagDao.deleteTag(id);
   }
 }

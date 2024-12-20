@@ -4,11 +4,20 @@ class TagDao {
     await TagModel.create(tag);
   }
 
-  static async findTag(name) {
+  static async findTagByName(name) {
     return await TagModel.findOne({
       attributes: ["id", "name", "state"],
       where: {
         name,
+      },
+    });
+  }
+
+  static async findTagById(id) {
+    return await TagModel.findOne({
+      attributes: ["id", "name", "state"],
+      where: {
+        id,
       },
     });
   }
